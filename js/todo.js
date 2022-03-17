@@ -47,7 +47,7 @@ function handleTodoSubmit(event) {
 toDoForm.addEventListener('submit', handleTodoSubmit);
 
 const savedToDoes = localStorage.getItem(toDoesKey);
-if (saveToDoes) {
+if (savedToDoes) {
     const parseSavedToDoes = JSON.parse(savedToDoes);
     toDoes = parseSavedToDoes;
     parseSavedToDoes.forEach(paintToDo);
