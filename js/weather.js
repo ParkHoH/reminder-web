@@ -19,7 +19,7 @@ function onGeoOk(position) {
 }
 
 function onGeoError() {
-    city.innerText = 'Check weather API key.'
+    city.innerText = "'내 위치 확인'을 허용해주세요!";
 }
 
 
