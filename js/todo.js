@@ -1,3 +1,5 @@
+'use strict';
+
 const toDoForm = document.querySelector('#todo_form');
 const toDoInput = toDoForm.querySelector('input')
 const toDoList = document.querySelector('#todo_list');

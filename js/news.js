@@ -3,8 +3,8 @@
 const mainNews = document.querySelector('#main_news');
 const newsItem = mainNews.querySelectorAll('.news_item');
 
-const URL_NEWS = ['https://news.daum.net/digital', 'https://news.daum.net/economic'];
-const CORS = 'https://cors-anywhere.herokuapp.com/';
+const NEWS_THEME = ['digital', 'economic'];
+const CORS = 'https://cors-anywhere.herokuapp.com/https://news.daum.net/';
 
 function paintNews(htmlDoc) {
     const ulMainNews = htmlDoc.querySelector('.list_mainnews');
@@ -21,7 +21,7 @@ function paintNews(htmlDoc) {
     });
 }
 
-URL_NEWS.forEach((url) => {
+NEWS_THEME.forEach((url) => {
     fetch(CORS + url, {
     headers: {
         "host": "news.daum.net",

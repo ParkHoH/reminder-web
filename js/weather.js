@@ -1,3 +1,5 @@
+'use strict';
+
 const weatherContainer = document.querySelector('#weather');
 const city = weatherContainer.querySelector('div:first-child');
 const weather = weatherContainer.querySelector('div:last-child');
