@@ -10,13 +10,13 @@ const HIDDEN_CLASSNAME = 'hidden';
 function onLoginSubmit(event) {
     event.preventDefault();
     loginForm.classList.add(HIDDEN_CLASSNAME);
-    userName = loginInput.value;
+    const userName = loginInput.value;
     localStorage.setItem(USERNAME_KEY, userName);
     paintGreeting();
 }
 
 function paintGreeting() {
-    userName = localStorage.getItem(USERNAME_KEY);
+    const userName = localStorage.getItem(USERNAME_KEY);
     greeting.classList.remove(HIDDEN_CLASSNAME);
     greeting.innerText = `Hello, ${userName}`;
 }
