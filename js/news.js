@@ -1,7 +1,6 @@
 'use strict';
 
 const mainNews = document.querySelector('#main_news');
-const newsItem = mainNews.querySelectorAll('.news_item');
 
 const NEWS_THEME = ['digital', 'economic'];
 const CORS = 'https://cors-anywhere.herokuapp.com/https://news.daum.net/';
@@ -11,14 +10,21 @@ function paintNews(htmlDoc) {
     const newsTitle = ulMainNews.querySelectorAll('.link_txt');
     const newsPublisher = ulMainNews.querySelectorAll('.txt_info');
 
-    newsTitle.forEach((title, idx) => {
-        const list_title = newsItem[idx].querySelector('li:first-child');
-        list_title.innerText = title.innerText;
-    });
-    newsPublisher.forEach((publisher, idx) => {
-        const list_publisher = newsItem[idx].querySelector('li:last-child');
-        list_publisher.innerText = publisher.innerText;
-    });
+    for (let i=0; i<3; i++) {
+        const div = document.createElement('div');
+        const li_title = document.createElement('li');
+        const li_publisher = document.createElement('li');
+
+        div.className = 'news_item';
+        li_title.className = 'title';
+        li_publisher.className = 'publisher';
+        div.appendChild(li_title);
+        div.appendChild(li_publisher);
+        mainNews.appendChild(div);
+
+        li_title.innerText = newsTitle[i].innerText;
+        li_publisher.innerText = newsPublisher[i].innerText;
+    }
 }
 
 NEWS_THEME.forEach((url) => {
