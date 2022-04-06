@@ -39,5 +39,5 @@ NEWS_THEME.forEach((url) => {
         const htmlDoc = parser.parseFromString(data, 'text/html');
         paintNews(htmlDoc);
     })
-    .catch((e) => console.log('Many Requests'))
+    .catch((e) => "뉴스를 보기 위해서 https://cors-anywhere.herokuapp.com/에 접속해서 허용해주세요!")
 })

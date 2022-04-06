@@ -5,31 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reminder Web</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css" />
     <script defer src="js/greating.js"></script>
     <script defer src="js/clock.js"></script>
     <script defer src="js/backgroundImg.js"></script>
     <script defer src="js/todo.js"></script>
     <script defer src="js/weather.js"></script>
-    <script defer src="js/news.js"></script>
+    <!-- <script defer src="js/news.js"></script> -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
 <body>
-    <dic id="clock">00:00</dic>
-    <form id="login-form" class=""> 
-        <input type="text" placeholder="이름을 입력해주세요."/>
-        <button>Log In</button>
-    </form>
-    <h1 id="greeting" class="hidden"></h1>
-    <form id="todo_form">
-        <input required type="text" placeholder="Write To Do List" />
-    </form>
-    <ul id="todo_list"></ul>
-    <div id="weather">
-        <div></div>
-        <div></div>
+    <div class="container">
+        <form id="login-form" class=""> 
+            <input type="text" placeholder="이름을 입력해주세요."/>
+            <button>Log In</button>
+        </form>
+        <h1 id="greeting" class="hidden text-center"></h1>
+
+        <div class="row">
+            <div class="col-md-7 order-lg-0 order-md-0 order-1">
+                <div class="row">
+                    <div class="col-md-7 mb-3 text-center">
+                        <dic id="clock">00:00</dic>
+                    </div>
+
+                    <div class="col-md-5 mb-3">
+                        <div id="weather">
+                            <div></div>
+                            <div></div>
+                            <img class="weather-icon">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <ul id="main_news">
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-5 order-lg-1 order-md-1 order-0">
+                <div class="todo">
+                    <div class="todo_title">Today</div>
+                    <form id="todo_form">
+                        <input required type="text" id="todo-input" placeholder="+ New To Do" />
+                    </form>
+                    <ul id="todo_list"></ul>
+                </div>
+            </div>
+        </div>
     </div>
-    <ul id="main_news">
-    </ul>
+
     <div class="backgroud"></div>
 </body>
 </html>
