@@ -7,8 +7,9 @@
     --font-super-size: 100px;
     --font-large-size: 50px;
     --font-medium-size: 35px;
-    --font-small-size: 20px;
-    --font-micro-size: 12px;
+    --font-small-size: 28px;
+    --font-micro-size: 22px;
+    --font-news-size: 18px;
 
     /* size */
     --padding: 10px;
@@ -46,18 +47,45 @@ button {
     outline: none;
     background: none;
     color: var(--white-color);
-    margin-left: var(--margin);
+    margin-left: calc(var(--margin)/2);
 }
 
 .container {
     position: relative;
-    top: 20%;
+    top: 10%;
     transition: 1s ease-in-out;
+}
+
+#login-form {
+    text-align: center;
+}
+
+#login-form>input {
+    padding-left: var(--padding);
+    color: var(--black-color);
+    font-weight: bold;
+    opacity: 0.5;
+    border-radius: 5%;
+    margin-bottom: calc(var(--margin)/2);
+}
+
+#login-form>input::placeholder {
+    color: var(--black-color);
+    font-weight: bold;
+}
+
+#login-form button:hover {
+    text-decoration: underline;
+    font-weight: bold;
+    transform: scale(1);
+    -webkit-transform: scale(1.05);
+    transition: 0.3s ease-in-out;
 }
 
 #greeting {
     font-size: var(--font-large-size);
     font-weight: bold;
+    margin-bottom: calc(var(--margin)*3);
 }
 
 #clock {
@@ -79,6 +107,28 @@ button {
     font-weight: bold;
 }
 
+.news_title {
+    font-size: var(--font-medium-size);
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: calc(var(--margin)/4);
+}
+
+.news_title {
+    font-size: var(--font-medium-size);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#main_news {
+    font-size: var(--font-small-size);
+}
+
+.news_item {
+    font-size: var(--font-news-size);
+    margin-left: var(--margin);
+}
+
 .todo {
     font-size: var(--font-super-size);
 }
@@ -98,19 +148,27 @@ button {
     width: 60%;
     border-radius: 5%;
     margin-bottom: calc(var(--margin)/2);
-}
-
-#todo_list {
-    padding: 0;
-    transition: 0.5s ease-in-out;
+    font-size: var(--font-micro-size);
 }
 
 #todo-input::placeholder {
     color: var(--black-color);
     font-weight: bold;
+    font-size: var(--font-micro-size);
+}
+
+#todo_list {
+    padding: 0;
+    overflow: auto;
+    height: 500px;
+}
+
+#todo_list::-webkit-scrollbar {
+    visibility: hidden;
 }
 
 #todo_list li {
+    font-size: var(--font-micro-size);
     display: flex;
     justify-content: space-between;
     width: 60%;
@@ -118,6 +176,10 @@ button {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
+}
+
+#todo_list li span {
+    font-size: var(--font-micro-size);
 }
 
 #todo_list li:hover {
@@ -147,6 +209,10 @@ button {
         top: 10%;
     }
     
+    .news {
+        display: none;
+    }
+
     .todo {
         text-align: center;
     }
@@ -154,10 +220,8 @@ button {
     #todo_list {
         overflow: auto;
         height: 200px;
-    }
-
-    #todo_list::-webkit-scrollbar {
-        visibility: hidden;
+        width: 60%;
+        margin: 0 auto;
     }
 
     #todo_list li {

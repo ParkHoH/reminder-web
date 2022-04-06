@@ -12,13 +12,13 @@
     <script defer src="js/backgroundImg.js"></script>
     <script defer src="js/todo.js"></script>
     <script defer src="js/weather.js"></script>
-    <!-- <script defer src="js/news.js"></script> -->
+    <script defer src="js/news.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
         <form id="login-form" class=""> 
-            <input type="text" placeholder="이름을 입력해주세요."/>
+            <input required type="text" placeholder="What's Your Name?"/>
             <button>Log In</button>
         </form>
         <h1 id="greeting" class="hidden text-center"></h1>
@@ -40,8 +40,13 @@
                 </div>
 
                 <div class="row">
-                    <ul id="main_news">
-                    </ul>
+                    <div class="news">
+                        <div class="news_title">Today's News</div>
+                        <ul id="main_news">
+                            <li class="tech_news">Tech</li>
+                            <li class="economic_news">Economic</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 

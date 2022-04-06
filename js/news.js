@@ -1,33 +1,31 @@
 'use strict';
 
 const mainNews = document.querySelector('#main_news');
+const techNews = mainNews.querySelector('.tech_news');
+const economicNews = mainNews.querySelector('.economic_news');
 
 const NEWS_THEME = ['digital', 'economic'];
 const CORS = 'https://cors-anywhere.herokuapp.com/https://news.daum.net/';
 
-function paintNews(htmlDoc) {
+function paintNews(htmlDoc, idx) {
     const ulMainNews = htmlDoc.querySelector('.list_mainnews');
     const newsTitle = ulMainNews.querySelectorAll('.link_txt');
     const newsPublisher = ulMainNews.querySelectorAll('.txt_info');
 
     for (let i=0; i<3; i++) {
         const div = document.createElement('div');
-        const li_title = document.createElement('li');
-        const li_publisher = document.createElement('li');
-
         div.className = 'news_item';
-        li_title.className = 'title';
-        li_publisher.className = 'publisher';
-        div.appendChild(li_title);
-        div.appendChild(li_publisher);
-        mainNews.appendChild(div);
+        if(NEWS_THEME[idx] === 'economic') {
+            economicNews.appendChild(div);
+        } else {
+            techNews.appendChild(div);
+        }
 
-        li_title.innerText = newsTitle[i].innerText;
-        li_publisher.innerText = newsPublisher[i].innerText;
+        div.innerText = `- [${newsPublisher[i].innerText}] ${newsTitle[i].innerText}`;
     }
 }
 
-NEWS_THEME.forEach((url) => {
+NEWS_THEME.forEach((url, idx) => {
     fetch(CORS + url, {
     headers: {
         "host": "news.daum.net",
@@ -37,7 +35,7 @@ NEWS_THEME.forEach((url) => {
     .then((data) => {
         const parser = new DOMParser();
         const htmlDoc = parser.parseFromString(data, 'text/html');
-        paintNews(htmlDoc);
+        paintNews(htmlDoc, idx);
     })
     .catch((e) => "뉴스를 보기 위해서 https://cors-anywhere.herokuapp.com/에 접속해서 허용해주세요!")
 })
