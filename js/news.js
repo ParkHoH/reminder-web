@@ -3,6 +3,7 @@
 const mainNews = document.querySelector('#main_news');
 const techNews = mainNews.querySelector('.tech_news');
 const economicNews = mainNews.querySelector('.economic_news');
+const errorNews = mainNews.querySelector('.error_news');
 
 const NEWS_THEME = ['digital', 'economic'];
 const CORS = 'https://cors-anywhere.herokuapp.com/https://news.daum.net/';
@@ -37,5 +38,9 @@ NEWS_THEME.forEach((url, idx) => {
         const htmlDoc = parser.parseFromString(data, 'text/html');
         paintNews(htmlDoc, idx);
     })
-    .catch((e) => "뉴스를 보기 위해서 https://cors-anywhere.herokuapp.com/에 접속해서 허용해주세요!")
+    .catch((e) => {
+        techNews.classList.add(HIDDEN_CLASSNAME);
+        economicNews.classList.add(HIDDEN_CLASSNAME);
+        errorNews.innerText = "Click here to permit 'Request temporay aceess'";
+    })
 })

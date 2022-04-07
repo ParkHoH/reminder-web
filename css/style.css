@@ -21,8 +21,6 @@
 }
 
 * {
-    margin: 0;
-    padding: 0;
     color: var(--white-color);
     font-size: var(--font-small-size);
 }
@@ -39,6 +37,7 @@ body{
 
 ul {
     list-style: none;
+    padding: var(--padding);
 }
 
 button {
@@ -48,6 +47,10 @@ button {
     background: none;
     color: var(--white-color);
     margin-left: calc(var(--margin)/2);
+}
+
+a {
+    color: var(--white-color);
 }
 
 .container {
@@ -61,7 +64,6 @@ button {
 }
 
 #login-form>input {
-    padding-left: var(--padding);
     color: var(--black-color);
     font-weight: bold;
     opacity: 0.5;
@@ -72,6 +74,7 @@ button {
 #login-form>input::placeholder {
     color: var(--black-color);
     font-weight: bold;
+    text-align: center;
 }
 
 #login-form button:hover {
@@ -114,19 +117,29 @@ button {
     margin-bottom: calc(var(--margin)/4);
 }
 
-.news_title {
-    font-size: var(--font-medium-size);
-    font-weight: bold;
-    text-decoration: underline;
-}
-
 #main_news {
     font-size: var(--font-small-size);
+    font-weight: bold;
 }
 
 .news_item {
     font-size: var(--font-news-size);
     margin-left: var(--margin);
+    font-weight: lighter;
+}
+
+.error_news {
+    font-size: var(--font-micro-size);
+    padding-left: 0%;
+    line-height: 0px;
+}
+
+.error_news:hover {
+    color: var(--white-color);
+    font-weight: bold;
+    transform: scale(1);
+    -webkit-transform: scale(1.05);
+    transition: 0.3s ease-in-out;
 }
 
 .todo {
@@ -206,7 +219,7 @@ button {
 
 @media screen and (max-width: 768px) {
     .container {
-        top: 10%;
+        top: 5%;
     }
     
     .news {
@@ -219,7 +232,7 @@ button {
 
     #todo_list {
         overflow: auto;
-        height: 200px;
+        max-height: 200px;
         width: 60%;
         margin: 0 auto;
     }
