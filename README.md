@@ -19,7 +19,7 @@
 ## 기술 스택
 <p>
   <img src="https://img.shields.io/badge/-HTML5-blue"/>&nbsp
-  <img src="https://img.shields.io/badge/-CSS-red"/>&nbsp
+  <img src="https://img.shields.io/badge/-CSS3-red"/>&nbsp
   <img src="https://img.shields.io/badge/-Bootstrap-yellow"/>&nbsp
   <img src="https://img.shields.io/badge/-JavaScript-orange"/>&nbsp
 </p>
